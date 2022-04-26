@@ -80,6 +80,12 @@ public class EmployeePayrollService {
 
     }
 
+    public Map<String, Double> readAverageSalaryByGender(IOService ioService) {
+    if(ioService.equals(IOService.DB_IO))
+        return employeePayrollDBService.getAverageSalaryByGender();
+        return null;
+    }
+
     public enum IOService {CONSOLE_IO, FILE_IO, DB_IO, REST_IO}
 
 
